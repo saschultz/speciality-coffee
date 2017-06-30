@@ -1,5 +1,5 @@
 class Review < ActiveRecord::Base
-  validates(:author, :presence => true)
+  validates(:author, :content_body, :presence => true)
 
   belongs_to :product
 end
