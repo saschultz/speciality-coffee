@@ -5,7 +5,10 @@
 <p><em>$<%= @product.cost %></em></p>
 
 
-<%= link_to "edit this coffee", edit_product_path %>
+<%= link_to "edit coffee", edit_product_path %><br>
+<p><%= link_to "delete coffee", product_path(@product),
+                         :data => {:confirm => "Remove coffee from product list?",
+                                   :method => "delete"} %></p>
 <br><br>
 <%= link_to "back", product_all_path(:id) %>
 <%= link_to "home", products_path %>
