@@ -9,6 +9,26 @@
 <p><%= link_to "delete coffee", product_path(@product),
                          :data => {:confirm => "Remove coffee from product list?",
                                    :method => "delete"} %></p>
+
+<% if @product.reviews.any? %>
+  <h4>Reviews</h4>
+  <ul>
+    <% @product.reviews.each do |review| %>
+      <div class="well">
+        <p>rating: <%= review.rating %>/5</p>
+        <li>
+          <%= review.content_body %><br><%= review.author %>
+        </li>
+      </div>
+    <% end %>
+  </ul>
+  <%= link_to 'new review', new_product_review_path(@product) %>
+<% else %>
+  <p>Be the first to review this coffee!</p>
+  <%= link_to 'add review', new_product_review_path(@product) %>
+<% end %>
+
+
 <br><br>
 <%= link_to "back", product_all_path(:id) %>
 <%= link_to "home", products_path %>

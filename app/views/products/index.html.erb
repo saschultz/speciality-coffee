@@ -1,13 +1,31 @@
-<h1>Speciality Coffee Company</h1>
-<p>Speciality Coffee Company exists to satisfy all your covfefe and caffeination needs.</p>
-<p>Explore our site to learn about our products or add a review.</p>
+<div class="jumbotron">
 
-<h3>New Coffees</h3>
-<ul>
-  <% @products.each do |product| %>
-    <li><%= link_to product.name, product_path(product) %><br></li>
-  <% end %>
-</ul>
+  <h1>Speciality Coffee Company</h1>
+  <div class="jumbo-text">
+    <p>Speciality Coffee Company exists to satisfy all your covfefe and caffeination needs.</p>
+    <p>Explore our site to learn about our products or add a review.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <h3>New Coffees</h3>
+    <ul>
+      <% @products.each do |product| %>
+      <li><%= link_to product.name, product_path(product) %><br></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="col-sm-6">
+    <h3>Most Reviewed Coffee</h3>
+    <ul>
+      <% @products.each do |product| %>
+      <li><%= link_to product.name, product_path(product) %><br></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
 
 <%= link_to "all coffees", product_all_path(:id) %>
 
