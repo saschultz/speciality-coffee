@@ -1,6 +1,8 @@
-<h3>Coffee</h3>
+<h3>All Coffees</h3>
 <ul>
   <% @products.each do |product| %>
     <li><%= link_to product.name, product_path(product) %><br></li>
   <% end %>
 </ul>
+
+<%= link_to "home", products_path %>
