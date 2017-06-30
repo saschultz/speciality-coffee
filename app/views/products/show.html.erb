@@ -14,12 +14,17 @@
   <h4>Reviews</h4>
   <ul>
     <% @product.reviews.each do |review| %>
-      <div class="well">
-        <p>rating: <%= review.rating %>/5</p>
-        <li>
-          <%= review.content_body %><br><%= review.author %>
-        </li>
-      </div>
+      <li>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h5><%= review.author %> -
+           rating: <%= review.rating %>/5</h5>
+          </div>
+          <div class="panel-body">
+            <%= review.content_body %>
+          </div>
+        </div>
+      </li>
     <% end %>
   </ul>
   <%= link_to 'new review', new_product_review_path(@product) %>
