@@ -1,3 +1,3 @@
 class Product < ActiveRecord::Base
-  validates(:name, :presence => true)
+  validates(:name, :cost, :presence => true)
 end
