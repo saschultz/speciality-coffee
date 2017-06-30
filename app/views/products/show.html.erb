@@ -1,14 +1,22 @@
-<h1><%= @product.name %></h1>
+<h1 class="product-name"><%= @product.name %></h1>
 <hr>
-<h3>Origin: <%= @product.origin %></h3>
-<p>Tasting Notes: <%= @product.notes %></p>
-<p><em>$<%= @product.cost %></em></p>
+<div class="row">
+  <div class="col-sm-6">
+    <h3>Origin: <%= @product.origin %></h3>
+    <p>Tasting Notes: <%= @product.notes %></p>
+    <p><em>$<%= @product.cost %></em></p>
 
 
-<%= link_to "edit coffee", edit_product_path %><br>
-<p><%= link_to "delete coffee", product_path(@product),
-                         :data => {:confirm => "Remove coffee from product list?",
-                                   :method => "delete"} %></p>
+    <%= link_to "edit coffee", edit_product_path %><br>
+    <p><%= link_to "delete coffee", product_path(@product),
+    :data => {:confirm => "Remove coffee from product list?",
+      :method => "delete"} %></p>
+  </div>
+  <div class="col-sm-6">
+
+  </div>
+
+</div>
 
 <% if @product.reviews.any? %>
   <h4>Reviews</h4>
@@ -27,13 +35,13 @@
       </li>
     <% end %>
   </ul>
-  <%= link_to 'new review', new_product_review_path(@product) %>
+  <h4><%= link_to 'new review', new_product_review_path(@product) %></h4>
+
 <% else %>
   <p>Be the first to review this coffee!</p>
   <%= link_to 'add review', new_product_review_path(@product) %>
 <% end %>
-
-
-<br><br>
-<%= link_to "back", product_all_path(:id) %>
-<%= link_to "home", products_path %>
+<div class="links">
+  <h5><%= link_to "all coffees", product_all_path(:id) %></h5>
+  <h5><%= link_to "home", products_path %></h5>  
+</div>
