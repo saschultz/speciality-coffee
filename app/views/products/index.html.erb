@@ -2,7 +2,7 @@
 <p>Speciality Coffee Company exists to satisfy all your covfefe and caffeination needs.</p>
 <p>Explore our site to learn about our products or add a review.</p>
 
-<h3>Coffee</h3>
+<h3>New Coffees</h3>
 <ul>
   <% @products.each do |product| %>
     <li><%= link_to product.name, product_path(product) %><br></li>
@@ -12,5 +12,5 @@
 <%= link_to "all coffees", product_all_path(:id) %>
 
 <footer>
-  <%= link_to 'admin', new_product_path %>  
+  <%= link_to 'admin', new_product_path %>
 </footer>
