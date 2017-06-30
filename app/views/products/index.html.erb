@@ -1,8 +1,10 @@
 <h1>Speciality Coffee Company</h1>
-<p>Speciality Covfefe Company exists to satisfy all your covfefe and caffeinnation needs.</p>
+<p>Speciality Coffee Company exists to satisfy all your covfefe and caffeination needs.</p>
+<p>Explore our site to learn about our products or add a review.</p>
 
+<h3>Coffee</h3>
 <ul>
   <% @products.each do |product| %>
-    <li><%= product.name %><br></li>
+    <li><%= link_to product.name, product_path(product) %><br></li>
   <% end %>
 </ul>
