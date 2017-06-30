@@ -3,3 +3,7 @@
 <h3>Origin: <%= @product.origin %></h3>
 <p>Tasting Notes: <%= @product.notes %></p>
 <p><em>$<%= @product.cost %></em></p>
+
+
+<%= link_to "back", product_all_path(:id) %>
+<%= link_to "home", products_path %>

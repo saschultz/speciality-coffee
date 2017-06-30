@@ -7,5 +7,8 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
-
+  def all
+    @products = Product.all
+    render :all
+  end
 end
