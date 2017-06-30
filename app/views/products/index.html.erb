@@ -1,10 +1,9 @@
-<div class="jumbotron">
+<h4 class="admin"><%= link_to 'admin', new_product_path %></h4>
 
-  <h1>Speciality Coffee Company</h1>
-  <div class="jumbo-text">
-    <p>Speciality Coffee Company exists to satisfy all your covfefe and caffeination needs.</p>
-    <p>Explore our site to learn about our products or add a review.</p>
-  </div>
+<div class="jumbotron">
+  <h1>Speciality Coffee Co.</h1>
+  <p>Speciality Coffee Company exists to satisfy all your covfefe and caffeination needs.</p>
+  <p>Explore our site to learn about our products or add a review!</p>
 </div>
 
 <div class="row">
@@ -27,8 +26,5 @@
   </div>
 </div>
 
-<%= link_to "all coffees", product_all_path(:id) %>
-
-<footer>
-  <%= link_to 'admin', new_product_path %>
-</footer>
+<hr>
+<h3><%= link_to "all coffees", product_all_path(:id) %></h3>
