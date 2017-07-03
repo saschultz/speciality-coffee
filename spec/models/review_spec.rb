@@ -7,8 +7,8 @@ describe Review do
 
   it { should belong_to :product }
 
-  it { is_expected.to callback(:validate_length).before(:save) }
+  # it { is_expected.to callback(:validate_length).before(:save) }
 
-  # it { should validate_length_of(:content_body).is_at_least(50).is_at_most(250) }
+  it { should validate_length_of(:content_body).is_at_least(50).is_at_most(250) }
 
 end
