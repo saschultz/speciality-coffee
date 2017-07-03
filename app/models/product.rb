@@ -8,7 +8,8 @@ class Product < ActiveRecord::Base
       .order("reviews_count DESC")
       .limit(1)
     )}
-    
+
+  scope :local, -> { where('origin LIKE ?', '%, USA' )}  
 
   validates(:name, :cost, :origin, :notes, :presence => true)
 

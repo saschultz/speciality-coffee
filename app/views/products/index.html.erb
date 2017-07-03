@@ -7,7 +7,7 @@
 </div>
 
 <div class="row">
-  <div class="col-sm-6">
+  <div class="col-sm-4" class="sub-header">
     <h3>New Coffees</h3>
     <ul>
       <% @products.each do |product| %>
@@ -16,7 +16,16 @@
     </ul>
   </div>
 
-  <div class="col-sm-6">
+  <div class="col-sm-4" class="sub-header">
+    <h3>Local Coffee</h3>
+    <ul>
+      <% @localProducts.each do |product| %>
+      <li><%= link_to product.name, product_path(product)%><br></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="col-sm-4" class="sub-header">
     <h3>Most Reviewed Coffee</h3>
     <ul>
       <% @reviews.each do |review| %>
@@ -25,6 +34,10 @@
     </ul>
   </div>
 </div>
+
+
+
+
 
 <hr>
 <h3><%= link_to "all coffees", product_all_path(:product_id) %></h3>
