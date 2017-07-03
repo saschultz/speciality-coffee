@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.three_most_recent
+    @reviews = Product.most_reviews
   end
 
   def show
