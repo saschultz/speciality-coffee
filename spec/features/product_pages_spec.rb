@@ -12,6 +12,10 @@ describe 'the adding a product process' do
     click_link 'all coffees'
     expect(page).to have_content 'Cool Covfefe'
   end
-end
 
-# coffee = Product.create(:name => 'Cool Covfefe', :cost => 14.95, :origin => 'Kirundo, Burundi', :notes => 'citrus, bright, floral')
+  it 'gives errors when the form is not fully completed' do
+    visit new_product_path
+    click_on 'Create Product'
+    expect(page).to have_content 'errors'
+  end
+end
