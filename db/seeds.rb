@@ -11,5 +11,15 @@ Review.destroy_all
     end
 end
 
+# local data to seed
+2.times do |index|
+  product = Product.create!(name: Faker::Coffee.blend_name,
+                            cost: Faker::Commerce.price,
+                            origin: "Oregon, USA",
+                            notes: Faker::Coffee.notes)
+    5.times do |index|
+      product.reviews.create(author: Faker::Name.name, content_body: Faker::Lorem.characters(100), rating: Faker::Number.between(1, 5), product_id: Faker::Number.between(1, 50))
+    end
+end
 p "#{Product.count} products"
 p "#{Review.count} reviews"
