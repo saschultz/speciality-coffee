@@ -10,4 +10,13 @@ describe 'the edit a product process' do
     click_link 'all coffees'
     expect(page).to have_content 'Coolest Covfefe'
   end
+
+  it 'gives an error if a field is left blank' do
+    coffee = Product.create(:name => 'Cool Covfefe', :cost => 14.95, :origin => 'Kirundo, Burundi', :notes => 'citrus, bright, fruity')
+    visit product_path(coffee)
+    click_link 'edit coffee'
+    fill_in 'Name', :with => ''
+    click_on 'Update Product'
+    expect(page).to have_content 'errors'
+  end
 end
